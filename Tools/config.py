@@ -15,3 +15,8 @@ normalise = True
 # Downscale factor for the pyramid
 
 downScaleFactor = 2
+
+# Location to store the features
+
+inputFoldePath = '/home/ggutierrez/Test/input'
+outputFolderPath = '/home/ggutierrez/Test/output'

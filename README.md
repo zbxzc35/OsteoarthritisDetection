@@ -1,3 +1,3 @@
 # OsteoarthritisDetection
 
-Hip OA detection from X-Ray imaging
+Hip Osteoarthritis detection from X-Ray images

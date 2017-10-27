@@ -1,10 +1,9 @@
-import numpy as np
 import matplotlib.pyplot as plt
-import config as cfg
-
+import numpy as np
 from skimage import data
 from skimage.transform import pyramid_gaussian
 
+from Tools import config as cfg
 
 #image = data.astronaut()
 imagePath = '/home/ggutierrez/AP.jpg'

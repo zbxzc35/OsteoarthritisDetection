@@ -1,6 +1,7 @@
 
 from skimage.feature import hog
-import config as cfg
+
+from Tools import config as cfg
 
 
 def extractHOGFeatures(image):
