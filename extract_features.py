@@ -1,10 +1,11 @@
-import feature_extractor
 import os
 import pickle
-from skimage import io, util
 
-inputPath = '/home/ggutierrez/Test/input'
-outputPath = '/home/ggutierrez/Test/output'
+from skimage import io, util
+from Tools import config as cfg, feature_extractor
+
+inputPath = cfg.inputFoldePath
+outputPath = cfg.outputFolderPath
 
 
 def run():

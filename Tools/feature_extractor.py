@@ -10,6 +10,5 @@ def extractHOGFeatures(image):
                 pixels_per_cell=cfg.pixel_per_cell,
                 cells_per_block=cfg.cell_per_block,
                 block_norm=cfg.block_norm,
-                visualise=False,
-                normalise=cfg.normalise)
+                visualise=False)
     return feats
