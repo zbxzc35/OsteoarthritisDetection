@@ -4,7 +4,8 @@
 # DATASET settings
 #############################
 
-datasetRoot = '/home/ggutierrez/Test/dataset'
+#datasetRoot = '/home/ggutierrez/Test/dataset'
+datasetRoot =  '/home/ggutierrez/Test/input'
 
 #############################
 # FEATURE extraction settings
@@ -26,3 +27,11 @@ downScaleFactor = 2
 
 inputFoldePath = '/home/ggutierrez/Test/input'
 outputFolderPath = '/home/ggutierrez/Test/output'
+
+
+# Test image path
+imagePath = '/home/ggutierrez/H1RXfinal.png'
+
+# Settings
+num_of_patches = 5
+patch_shape = (40, 40)
