@@ -1,8 +1,8 @@
 import os
 import pickle
-
 from skimage import io, util, color
 from Tools import config as cfg, feature_extractor
+import numpy as np
 
 inputPath = cfg.inputFoldePath
 outputPath = cfg.outputFolderPath
@@ -36,23 +36,26 @@ def extractAndStoreFeatures(inputFolder, outputFolder):
         outputFile.close()
 
 
-def extractAndStoreFeaturesForPatches(imagesList):
+def extractFeaturesForPatches(images):
     print('Extracting features...')
-    matrixOfFeatsPerImage = list()
+    featsPerImage = []
 
-    for img in imagesList:
+    for img in images:
         print('Processing Image')
-        featsList = list()
+        features = []
         for patch in img:
             print('Extracting features of patch ... from image ...')
             #image = io.imread(patch, as_grey=True)
             image = color.rgb2grey(patch)
-            image = util.img_as_uint(image)
+            image = util.img_as_uint(image) # doubt #
             feats = feature_extractor.extractHOGFeatures(image)
-            featsList.append(feats)
-        matrixOfFeatsPerImage.append(featsList)
+            features.append(feats)
+        featsPerImage.append(features)
 
-    return matrixOfFeatsPerImage
+    # Convert list to ndarray
+    featsPerImage = np.array(featsPerImage)
+
+    return featsPerImage
 
 
 if __name__ == '__main__':

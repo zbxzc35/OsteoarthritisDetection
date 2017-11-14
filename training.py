@@ -2,6 +2,7 @@ from Tools import config as cfg
 #import patches_sampling
 import create_patches, extract_features
 import os
+import numpy as np
 
 def run():
     # List of X-Ray images in PNG format
@@ -11,15 +12,17 @@ def run():
 
     print('Training the system with', count,'X-Ray Images...')
 
-    # create patches (retornar los centros de los parches tambien)
-    patchesList, patchesCentresList = create_patches.run()
+    # Extract Patches and Patch Centres of all X-Ray Images
+    patchesPerImage, patchCentresPerImage = create_patches.run()
 
-    # extract features
-    matrixOfFeatures = extract_features.extractAndStoreFeaturesForPatches(patchesList)
-    matrixOfCentres = patchesCentresList
+    # Feature Vector Matrix
+    matrixOfFeatures = extract_features.extractFeaturesForPatches(patchesPerImage)
+    # Patch Centres Matrix
+    matrixOfCentres = patchCentresPerImage
 
-    print('Features Matrix:', matrixOfFeatures.__len__())
-    print('Patch Centres Matrix:', matrixOfCentres.__len__())
+    print(type(matrixOfFeatures))
+    print(type(matrixOfCentres))
+
 
 if __name__ == '__main__':
     run()
