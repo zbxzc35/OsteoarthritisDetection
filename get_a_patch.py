@@ -23,8 +23,6 @@ num_of_patches = 1
 sample_radius = 20
 
 # Random values for X and Y
-#x_values = [random.randint(10, x) for p in range(0,num_of_patches)]
-#y_values = [random.randint(10, y) for p in range(0,num_of_patches)]
 x_values = [random.randint(30,250) for p in range(0,num_of_patches)]
 y_values = [random.randint(320,500) for p in range(0,num_of_patches)]
 
@@ -35,7 +33,7 @@ patch_centres = list()
 for i in range(num_of_patches):
     x_pos = x_values[i]
     y_pos = y_values[i]
-    # Centro de los parches
+    # Patch centres
     x_patch = x_pos + (50)
     y_patch = y_pos + (50)
     patch_centres.append([x_patch, y_patch])
